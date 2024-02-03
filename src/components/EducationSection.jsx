@@ -1,6 +1,6 @@
 import React from 'react'
 import { Divider, MenuItem, Paper, Select } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import {BackNextButton,SelectComponent,Input} from "../Pages/index";
 import { connect } from "react-redux";
 import { addEducation } from "../Redux/Actions/actions";
