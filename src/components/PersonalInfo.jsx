@@ -1,4 +1,5 @@
 import React from 'react'
+import './Styles/PersonalInfo.css'
 import { useForm } from "react-hook-form";
 import { Avatar, Button, Divider, Paper, Snackbar } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -11,8 +12,9 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import {BackNextButton,Input} from "../Pages/index";
-import { addPersonalInfo } from "../Redux/Actions/actions";
+import NextBackButton from './NextBackButton';
+import Input from './Input';
+import { addPersonalInfo } from "../redux/action/Actions";
 
 const mapStateToProps = (state) => ({
   personalInfo: state.personalInfoReducer.personalInfo,
@@ -341,7 +343,7 @@ const PersonalInfo = (props) => {
           errorMessage={errors.objective ? errors.objective.message : null}
         />
         <Divider className="personal-details-divider" />
-        <BackNextButton
+        <NextBackButton
           // onNext={() => handleSubmit(handleNext)}
           loading={loading}
           tab={props.tab}

@@ -1,7 +1,8 @@
 import React from 'react'
+import './Styles/NextBackButton.css'
 import { Button, CircularProgress } from "@mui/material";
 
-const NextBackButton = () => {
+const NextBackButton = (props) => {
   return (
     <div className="back-next-button">
     {props.tab === 0 ? null : (

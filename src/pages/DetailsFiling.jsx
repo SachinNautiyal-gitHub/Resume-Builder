@@ -1,40 +1,35 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import EducationSection from "../components/EducationSection";
 import KeySkills from "../components/KeySkills";
 import PersonalInfo from "../components/PersonalInfo";
 import ResumePreview from "../components/ResumePreview";
+import WorkExperience from "../components/WorkExperience";
+import SidebarDetailFilling from "../components/SidebarDetailFilling";
 // import {
 //   Navbar,
 //   SidebarDetailFilling,
 //   EducationSection,
-//   KeyskillsSection,
-//   PersonalInformation,
+//   KeySkills,
+//   PersonalInfo,
 //   ResumePreview,
 //   WorkExperience,
 // } from "./";
-// import "./Styles/DetailsFilling.css";
+import "./Styles/DetailsFilling.css";
 
-// As soon as details are filled for particular section browser moves further to next fields 
-// if  there is same field on same page
 
-const DetailsFilling = (props) => {
+const DetailsFilling = () => {
   const [tab, setTab] = useState(0);
 
   return (
     <div className="details-filling">
-      <Navbar active={""} />
       {tab === 4 ? null : (
         <div className="details-filling-cont">
           <SidebarDetailFilling tab={tab} setTab={setTab} />
-          {tab === 0 ? (
-            <PersonalInformation setTab={setTab} tab={tab} />
-          ) : null}
-          {tab === 3 ? <KeyskillsSection setTab={setTab} tab={tab} /> : null}
-          {tab === 1 ? (
-            <WorkExperience setTab={setTab} tab={tab} />
-          ) : null}
+          {tab === 0 ? ( <PersonalInfo setTab={setTab} tab={tab} /> ) : null}
+          {tab === 1 ? ( <WorkExperience setTab={setTab} tab={tab} /> ) : null}
           {tab === 2 ? <EducationSection setTab={setTab} tab={tab} /> : null}
+          {tab === 3 ? <KeySkills setTab={setTab} tab={tab} /> : null}
         </div>
       )}
       {tab === 4 ? <ResumePreview setTab={setTab} tab={tab} /> : null}

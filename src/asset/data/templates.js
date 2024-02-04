@@ -11,7 +11,7 @@ import Template3 from '../templates/Template3'
 import Template4 from '../templates/Template4'
 
 
-export const template = [
+export const templates = [
     {
         id: 1,
         template_name: "Template-1",

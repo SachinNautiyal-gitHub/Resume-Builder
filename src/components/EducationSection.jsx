@@ -1,11 +1,13 @@
 import React from 'react'
+import './Styles/EducationSection.css'
 import { Divider, MenuItem, Paper, Select } from "@mui/material";
 import { useState } from "react";
-import {BackNextButton,SelectComponent,Input} from "../Pages/index";
+import NextBackButton from './NextBackButton';
+import Input from './Input';
+import SelectComponent from './SelectComponent'
 import { connect } from "react-redux";
-import { addEducation } from "../Redux/Actions/actions";
+import { addEducation } from "../redux/action/Actions";
 import { useForm, Controller } from "react-hook-form";
-import "../Styles/EducationSection.css";
 
 const mapStatetoProps = (state) => ({
   educationInfo: state.educationDetailsReducer.educationInfo,
@@ -66,7 +68,7 @@ const EducationSection = (props) => {
       <form onSubmit={handleSubmit(handleNext)}>
         <div className="education-form-cont">
           <Input
-            title={"Domain"}
+            title={"Type"}
             type={"text"}
             name={"domain"}
             register={register}
@@ -163,7 +165,7 @@ const EducationSection = (props) => {
           </SelectComponent>
         </div>
         <Divider sx={{ margin: "10px 0px" }} />
-        <BackNextButton
+        <NextBackButton
           onNext={handleNext}
           onBack={handleBack}
           loading={loading}

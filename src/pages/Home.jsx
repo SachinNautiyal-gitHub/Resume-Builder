@@ -4,7 +4,7 @@ import {  Box, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 // import { connect } from "react-redux";
 
-import { template } from "../asset/data/template";
+import { templates } from "../asset/data/templates";
 
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
                 gridGap: "30px",
               }}
             >
-              {template.map((template) => {
+              {templates.map((template) => {
                 return (
                   <Box
                     key={template.id}

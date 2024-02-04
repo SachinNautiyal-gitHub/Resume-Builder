@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import './Styles/KeySkills.css'
 import { useForm } from "react-hook-form";
 import { Paper, Divider, Button } from "@mui/material";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import { connect } from "react-redux";
-import {BackNextButton,Input} from "../Pages/index";
-import { addNewSkills, deleteSkill, editSkill } from "../Redux/Actions/actions";
+import NextBackButton from "./NextBackButton";
+import Input from "./Input";
+import { addNewSkills, deleteSkill, editSkill } from "../redux/action/Actions";
 
 const mapStatetoProps = (state) => ({
   skills: state.keySkillsReducer.skills,
@@ -93,7 +95,7 @@ const KeySkills = (props) => {
           </Button>
         )}
         <Divider className="key-skills-divider" />
-        <BackNextButton
+        <NextBackButton
           onNext={handlePreview}
           loading={loading}
           tab={props.tab}
