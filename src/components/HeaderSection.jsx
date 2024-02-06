@@ -45,6 +45,7 @@ const HeaderSection = (props) => {
           {props.personalInfo.country} &nbsp;
           {props.personalInfo.postalCode}<br/>
           {props.personalInfo.mobile}<br/>
+          {props.personalInfo.email}<br/>
         </p>
       </div>
       

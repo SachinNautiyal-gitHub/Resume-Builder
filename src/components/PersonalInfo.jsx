@@ -167,7 +167,7 @@ const PersonalInfo = (props) => {
           className="change-profile-photo-btn"
           variant="outlined"
           onClick={handleClickOpen}>
-          Change Profile Photo
+          Upload profile photo
         </Button>
         <BootstrapDialog
           onClose={handleClose}
@@ -355,7 +355,7 @@ const PersonalInfo = (props) => {
       {/*popup notification when no profile image selected */}
       {/* ref :https://mui.com/material-ui/react-snackbar/ */}
       <Snackbar
-        anchorOrigin={{ vertical, horizontal }}
+        anchorOrigin={{ vertical:'top', horizontal: 'center' }}
         key={vertical + horizontal}
         open={imgSnackbar}
         autoHideDuration={1500}

@@ -18,7 +18,7 @@ import SidebarDetailFilling from "../components/SidebarDetailFilling";
 import "./Styles/DetailsFilling.css";
 
 
-const DetailsFilling = () => {
+const DetailsFilling = (props) => {
   const [tab, setTab] = useState(0);
 
   return (

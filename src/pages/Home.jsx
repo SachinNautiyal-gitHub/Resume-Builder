@@ -2,16 +2,25 @@ import React from 'react'
 import "./Styles/Home.css";
 import {  Box, Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-// import { connect } from "react-redux";
-
+import { connect } from "react-redux";
+import { selectTemplate } from "../redux/action/Actions";
 import { templates } from "../asset/data/templates";
 
+const StatetoProps = (state) => ({
+  selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
+});
 
-const Home = () => {
+const DispatchtoProps = (dispatch) => ({
+  setSelectedTemplateId: (id) => dispatch(selectTemplate(id)),
+});
+
+
+const Home = (props) => {
 
  const navigate = useNavigate();
 
  const handleOnClick = (id) =>{
+    props.setSelectedTemplateId(id);
      navigate('/fill-details')
  }
 
@@ -74,4 +83,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default connect(StatetoProps, DispatchtoProps)(Home)

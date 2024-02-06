@@ -136,9 +136,9 @@ const ResumePreview = (props) => {
         <h2 className="preview-header-title">Resume Preview</h2>
         <div className="resume-preview-grid-container">
           <div className="resume-preview-grid-item" id="previewresume">
-            {templates.map((template, index) => {
-              return getTemplate(template, index);
-            })}
+          {templates.map((template, index) => {
+            return getTemplate(template, index);
+          })}
           </div>
           <div className="resume-preview-grid-item">
             <div className="resume-save-container">

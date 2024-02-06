@@ -26,14 +26,14 @@ export const templates = [
     },
 
     {
-        id: 1,
+        id: 3,
         template_name: "Template-3",
         template_img: template3,
         template: <Template3/>,
     },
 
     {
-        id: 1,
+        id: 4,
         template_name: "Template-4",
         template_img: template4,
         template: <Template4/>,
