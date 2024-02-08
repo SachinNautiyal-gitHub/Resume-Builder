@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TemplateProfileName = () => {
+const TemplateProfileName = (props) => {
   return (
    <>
    <div className="userDetails">

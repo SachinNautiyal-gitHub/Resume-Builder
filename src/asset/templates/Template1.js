@@ -2,6 +2,10 @@ import { Container, Paper } from "@mui/material";
 import React from "react";
 import "./Styles/template1.css"
 import HeaderSection from '../../components/TemplateComponents/HeaderSection'
+import TemplateProfileImg from '../../components/TemplateComponents/TemplateProfileImg'
+import TemplateProfileName from '../../components/TemplateComponents/TemplateProfileName'
+import TemplateContactINfo from '../../components/TemplateComponents/TemplateContactINfo'
+import TemplateObjective from '../../components/TemplateComponents/TemplateObjective'
 import TempHeading from '../../components/TemplateComponents/TempHeading'
 import { data } from "../data/data";
 import TemplateExperience from '../../components/TemplateComponents/TemplateExperience'

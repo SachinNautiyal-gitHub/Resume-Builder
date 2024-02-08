@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TemplateProfileImg = () => {
+const TemplateProfileImg = (props) => {
     return (
         <div className='profile-img-section'>
             <img className='progile-img'
