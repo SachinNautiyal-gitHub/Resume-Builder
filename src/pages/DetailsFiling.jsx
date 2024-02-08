@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 // import Navbar from "../components/Navbar";
-import EducationSection from "../components/EducationSection";
-import KeySkills from "../components/KeySkills";
-import PersonalInfo from "../components/PersonalInfo";
-import ResumePreview from "../components/ResumePreview";
-import WorkExperience from "../components/WorkExperience";
-import SidebarDetailFilling from "../components/SidebarDetailFilling";
+import EducationSection from "../components/AppComponents/EducationSection";
+import KeySkills from "../components/AppComponents/KeySkills";
+import PersonalInfo from "../components/AppComponents/PersonalInfo";
+import ResumePreview from "../components/AppComponents/ResumePreview";
+import WorkExperience from "../components/AppComponents/WorkExperience";
+import SidebarDetailFilling from "../components/AppComponents/SidebarDetailFilling";
 // import {
 //   Navbar,
 //   SidebarDetailFilling,

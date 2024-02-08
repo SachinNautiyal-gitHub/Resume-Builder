@@ -1,9 +1,9 @@
-import "./Styles/WorkExperience.css";
+import "../Styles/WorkExperience.css";
 import React, {  useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Button, Divider, MenuItem, Paper, Select } from "@mui/material";
 import { connect } from "react-redux";
-import { addAllExperience, addExperience } from "../redux/action/Actions";
+import { addAllExperience, addExperience } from "../../redux/action/Actions";
 import Input from "./Input";
 import SelectComponent from "./SelectComponent";
 import NextBackButton from "./NextBackButton";

@@ -1,10 +1,10 @@
-import "./Styles/ResumePreview.css";
+import "../Styles/ResumePreview.css";
 import React, { useState } from "react";
 import { Button, CircularProgress, Container, TextField, Box, Modal, Typography } from "@mui/material";
 import JsPDF from "jspdf";
 import uniqid from "uniqid";
 import { connect } from "react-redux";
-import { templates } from "../asset/data/templates";
+import { templates } from "../../asset/data/templates";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const mapStatetoProps = (state) => ({

@@ -1,8 +1,8 @@
 
 import { TextField } from "@mui/material";
 import React from "react";
-import "./Styles/Input.css";
-import { inputChecks } from "../asset/Checks/InputChecks";
+import "../Styles/Input.css";
+import { inputChecks } from "../../asset/Checks/InputChecks";
 
 const Input = (props) => {
   return (

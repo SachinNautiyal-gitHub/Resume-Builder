@@ -1,5 +1,5 @@
 import React from 'react'
-import './Styles/PersonalInfo.css'
+import '../Styles/PersonalInfo.css'
 import { useForm } from "react-hook-form";
 import { Avatar, Button, Divider, Paper, Snackbar } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -14,7 +14,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import NextBackButton from './NextBackButton';
 import Input from './Input';
-import { addPersonalInfo } from "../redux/action/Actions";
+import { addPersonalInfo } from "../../redux/action/Actions";
 
 const mapStateToProps = (state) => ({
   personalInfo: state.personalInfoReducer.personalInfo,

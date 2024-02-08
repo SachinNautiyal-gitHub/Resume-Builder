@@ -1,12 +1,12 @@
 import React from 'react'
-import './Styles/EducationSection.css'
+import '../Styles/EducationSection.css'
 import { Divider, MenuItem, Paper, Select } from "@mui/material";
 import { useState } from "react";
 import NextBackButton from './NextBackButton';
 import Input from './Input';
 import SelectComponent from './SelectComponent'
 import { connect } from "react-redux";
-import { addEducation } from "../redux/action/Actions";
+import { addEducation } from "../../redux/action/Actions";
 import { useForm, Controller } from "react-hook-form";
 
 const mapStatetoProps = (state) => ({

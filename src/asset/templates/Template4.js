@@ -1,12 +1,12 @@
 import { Container, Paper } from "@mui/material";
 import React from "react";
 import "./template.css";
-import HeaderSection from '../../components/HeaderSection'
-import TempHeading from '../../components/TempHeading'
+import HeaderSection from '../../components/TemplateComponents/HeaderSection'
+import TempHeading from '../../components/TemplateComponents/TempHeading'
 import { data } from "../data/data";
-import TemplateExperience from '../../components/TemplateExperience'
-import TemplateEducation from "../../components/TemplateEducation";
-import TemplateKeySkill from "../../components/TemplateKeySkills";
+import TemplateExperience from '../../components/TemplateComponents/TemplateExperience'
+import TemplateEducation from "../../components/TemplateComponents/TemplateEducation";
+import TemplateKeySkill from "../../components/TemplateComponents/TemplateKeySkills";
 
 
 const Template4 = (props) => {
