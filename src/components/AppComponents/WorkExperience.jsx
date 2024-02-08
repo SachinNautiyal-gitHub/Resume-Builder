@@ -98,6 +98,7 @@ const WorkExperience = (props) => {
       organizationName: "",
       startYear: "",
       endYear: "",
+      details:"",
     });
   };
 
@@ -115,6 +116,16 @@ const WorkExperience = (props) => {
     const newExperiences = props.experiences.map((experience) => {
       if (experience.id === id) {
         return { ...experience, organizationName: value };
+      } else return experience;
+    });
+
+    props.setAllExperience(newExperiences);
+  };
+
+  const editDetails = (value, id)=>{
+    const newExperiences = props.experiences.map((experience) => {
+      if (experience.id === id) {
+        return { ...experience, details: value };
       } else return experience;
     });
 
@@ -240,6 +251,25 @@ const WorkExperience = (props) => {
                   />
                 </SelectComponent>
               </div>
+              <Input
+                  title={"Details"}
+                  type={"text"}
+                  name={"details" + experience.id}
+                  register={register}
+                  multiline={true}
+                  value={experience.details}
+                  setValue={(value) =>
+                    editDetails(value, experience.id)
+                  }
+                  error={
+                    errors[`details${experience.id}`] ? true : false
+                  }
+                  errorMessage={
+                    errors[`details${experience.id}`]
+                      ? errors[`details${experience.id}`].message
+                      : null
+                  }
+                />
             </div>
           );
         })}

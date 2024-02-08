@@ -70,13 +70,13 @@ const Template1 = (props) => {
           </div>
 
           <div className="education">
-            <TempHeading color={'black'} title={"Education"} />
+            <TempHeading color={'black'} title={"EDUCATION"} />
             <TemplateEducation education={educationinfo} />
 
           </div>
 
           <div className="skills">
-            <TempHeading color={"black"}  title={"Key Skills"} />
+            <TempHeading color={"black"}  title={"SKILLS"} />
             <ul style={{ marginBottom: 10 }}>
               {skills.map((skill, index) => {
                 return <TemplateKeySkill key={index} skill={skill} />;
@@ -88,10 +88,11 @@ const Template1 = (props) => {
 
         <div className="rightSection">
           <div className="objective">
+          <TempHeading color={'black'} title={"OBJECTIVE"} />
           <TemplateObjective personalInfo={personalinfo} />
           </div>
           <div className="workExperience">
-          <TempHeading color={"black"}  title={"Professional Experience"} />
+          <TempHeading color={"black"}  title={"EXPERIENCE"} />
           <ul style={{ marginBottom: 10 }}>
             {workexperience.map((experience, index) => {
               return (

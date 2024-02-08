@@ -13,6 +13,7 @@ const TemplateExperience = (props) => {
         <span className="experience-start-end">
           ({props.experience.startYear} - {props.experience.endYear})
         </span></p>
+        <p style={{fontSize:'12px'}}>{props.experience.details}</p>
     </li>
   </Container>
   )
