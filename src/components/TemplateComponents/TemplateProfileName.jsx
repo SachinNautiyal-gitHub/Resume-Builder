@@ -5,7 +5,7 @@ const TemplateProfileName = (props) => {
    <>
    <div className="userDetails">
     <div className="username">
-    {props.personalInfo.firstName + " " + props.personalInfo.lastName}
+    <h1>{props.personalInfo.firstName + " " + props.personalInfo.lastName}</h1>
     </div>
     <div className="profilename">
     {props.workExperience[0].jobTitle}

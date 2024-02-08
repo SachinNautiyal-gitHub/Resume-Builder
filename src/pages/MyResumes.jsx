@@ -100,7 +100,7 @@ const MyResumes = (props) => {
     props.setSelectedTemplateId(resume.template_id);
     props.setSelectedResumeId(resume.id);
     setUserData(resume);
-    navigate("/template/fill-details");
+    navigate("/fill-details");
   };
 
   return (

@@ -3,7 +3,7 @@ import React from 'react'
 
 const TemplateEducation = (props) => {
   return (
-    <h3 className="template-education-details">
+    <p className="template-education-details">
       {props.education.degree} in {props.education.domain}{" "}
       <span className="template-education-university">
         {props.education.university}
@@ -11,7 +11,7 @@ const TemplateEducation = (props) => {
       <span className="education-start-end">
         ({props.education.startYear} - {props.education.endYear})
       </span>
-    </h3>
+    </p>
   )
 }
 

@@ -5,7 +5,7 @@ const TemplateProfileImg = (props) => {
         <div className='profile-img-section'>
             <img className='progile-img'
                 src={props.personalInfo.profileImg}
-                alt="profile image" />
+                alt="profile" />
         </div>
     )
 }
