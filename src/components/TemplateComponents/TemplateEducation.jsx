@@ -3,15 +3,19 @@ import React from 'react'
 
 const TemplateEducation = (props) => {
   return (
-    <p className="template-education-details">
-      {props.education.degree} in {props.education.domain}{" "}
-      <span className="template-education-university">
+    <>
+      <p className="template-education-details">
+      <p  style={{fontSize:'15px', fontWeight:'600'}}>{props.education.degree} </p>
+      {props.education.domain}</p>   
+      <p className="template-education-university">
         {props.education.university}
-      </span>
-      <span className="education-start-end">
+      </p>
+       <p className="education-start-end">
         ({props.education.startYear} - {props.education.endYear})
-      </span>
-    </p>
+      </p>
+    
+    </>
+    
   )
 }
 

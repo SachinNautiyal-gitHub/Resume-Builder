@@ -1,15 +1,15 @@
 import { Paper } from "@mui/material";
 import React from "react";
-import "./Styles/template1.css"
-import TemplateProfileImg from '../../components/TemplateComponents/TemplateProfileImg'
-import TemplateProfileName from '../../components/TemplateComponents/TemplateProfileName'
-import TemplateContactINfo from '../../components/TemplateComponents/TemplateContactINfo'
-import TemplateObjective from '../../components/TemplateComponents/TemplateObjective'
-import TempHeading from '../../components/TemplateComponents/TempHeading'
-import { data } from "../data/data";
-import TemplateExperience from '../../components/TemplateComponents/TemplateExperience'
-import TemplateEducation from "../../components/TemplateComponents/TemplateEducation";
-import TemplateKeySkill from "../../components/TemplateComponents/TemplateKeySkills";
+import styles from './template1.module.css'
+import TemplateProfileImg from '../../../components/TemplateComponents/TemplateProfileImg'
+import TemplateProfileName from '../../../components/TemplateComponents/TemplateProfileName'
+import TemplateContactINfo from '../../../components/TemplateComponents/TemplateContactINfo'
+import TemplateObjective from '../../../components/TemplateComponents/TemplateObjective'
+import TempHeading from '../../../components/TemplateComponents/TempHeading'
+import { data } from "../../data/data";
+import TemplateExperience from '../../../components/TemplateComponents/TemplateExperience'
+import TemplateEducation from "../../../components/TemplateComponents/TemplateEducation";
+import TemplateKeySkill from "../../../components/TemplateComponents/TemplateKeySkills";
 
 const Template1 = (props) => {
   const personalinfo = props.personalinfo
@@ -54,28 +54,22 @@ const Template1 = (props) => {
         workExperience={workexperience}
       /> */}
 
-      <div className="template-header">
-        <div className="profileName">
+      <div className={styles.templateheader}>
+        <div className={styles.profileName}>
           <TemplateProfileName personalInfo={personalinfo} workExperience={workexperience} />
         </div>
-        <div className="profileImg">
+        <div className={styles.profileImg}>
           <TemplateProfileImg personalInfo={personalinfo} />
         </div>
       </div>
 
-      <div className="template-mid">
-        <div className="leftsection">
-          <div className="contact">
+      <div className={styles.templatemid}>
+        <div className={styles.leftsection}>
+          <div className={styles.contact}>
             <TemplateContactINfo personalInfo={personalinfo}/>
           </div>
 
-          <div className="education">
-            <TempHeading color={'black'} title={"EDUCATION"} />
-            <TemplateEducation education={educationinfo} />
-
-          </div>
-
-          <div className="skills">
+          <div className={styles.skills}>
             <TempHeading color={"black"}  title={"SKILLS"} />
             <ul style={{ marginBottom: 10 }}>
               {skills.map((skill, index) => {
@@ -83,15 +77,21 @@ const Template1 = (props) => {
               })}
             </ul>
           </div>
+
+          <div className={styles.education}>
+            <TempHeading color={'black'} title={"EDUCATION"} />
+            <TemplateEducation education={educationinfo} />
+
+          </div>
         </div>
 
 
-        <div className="rightSection">
-          <div className="objective">
+        <div className={styles.rightSection}>
+          <div className={styles.objective}>
           <TempHeading color={'black'} title={"OBJECTIVE"} />
           <TemplateObjective personalInfo={personalinfo} />
           </div>
-          <div className="workExperience">
+          <div className={styles.workExperience}>
           <TempHeading color={"black"}  title={"EXPERIENCE"} />
           <ul style={{ marginBottom: 10 }}>
             {workexperience.map((experience, index) => {

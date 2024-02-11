@@ -1,0 +1,12 @@
+.top{
+    padding-top: 60px;
+    background-color: #efcfc2;
+    margin-bottom: 10px;
+}
+
+
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

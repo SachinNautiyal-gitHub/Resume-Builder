@@ -48,7 +48,7 @@ const ResumePreview = (props) => {
       setLoading(true);
       const report = new JsPDF("portrait", "pt", "a4");
       report
-        .html(document.getElementById(`${props.selectedTemplateId - 1}report`))
+        .html(document.getElementById(`${props.selectedTemplateId-1}report`))
         .then(() => {
           report.save(`${resumeName}.pdf`);
           setLoading(false);
