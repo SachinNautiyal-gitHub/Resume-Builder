@@ -54,6 +54,7 @@ const Template4 = (props) => {
       </div>
       <div className={styles.profileName}>
         <TemplateProfileName personalInfo={personalinfo} workExperience={workexperience} />
+        <hr className={styles.line} /> 
       </div>
        </div>
      
@@ -67,7 +68,6 @@ const Template4 = (props) => {
 
         <div className={styles.skills}>
           <TempHeading color={"#443f45"}  title={"Skills"} />
-          <hr className={styles.line} /> 
           <ul style={{ marginBottom: 10 }}>
             {skills.map((skill, index) => {
               return <TemplateKeySkill key={index} skill={skill} />;
@@ -76,8 +76,7 @@ const Template4 = (props) => {
         </div>
 
         <div className={styles.education}>
-          <TempHeading color={'#443f45'} title={"Education"} />
-          <hr className={styles.line} /> 
+          <TempHeading color={'#443f45'} title={"Education"} />  
           <TemplateEducation education={educationinfo} />
 
         </div>
@@ -87,12 +86,12 @@ const Template4 = (props) => {
       <div className={styles.rightSection}>
         <div className={styles.objective}>
         <TempHeading color={'#443f45'} title={"Objective"} />
-        <hr className={styles.line} /> 
+      
         <TemplateObjective personalInfo={personalinfo} />
         </div>
         <div className={styles.workExperience}>
         <TempHeading color={"#443f45"}  title={"Work Experience"} />
-        <hr className={styles.line} /> 
+        
         <ul style={{ marginBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
