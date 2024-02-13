@@ -43,16 +43,6 @@ const Template1 = (props) => {
       }}
       id={`${props.index}report`}
       elevation={3}>
-      {/* <HeaderSection
-        primaryColor={"#2196f3"}
-        secondaryColor={"black"}
-        bgColor={"white"}
-        hrcolor={"#2196f3"}
-        Hdownheight={"3px"}
-        hrsecondcolor={"none"}
-        personalInfo={personalinfo}
-        workExperience={workexperience}
-      /> */}
 
       <div className={styles.templateheader}>
         <div className={styles.profileName}>
@@ -62,7 +52,6 @@ const Template1 = (props) => {
           <TemplateProfileImg personalInfo={personalinfo} />
         </div>
       </div>
-
       <div className={styles.templatemid}>
         <div className={styles.leftsection}>
           <div className={styles.contact}>
@@ -106,7 +95,6 @@ const Template1 = (props) => {
           </div>      
         </div>
       </div>
-
     </Paper>
   );
 };

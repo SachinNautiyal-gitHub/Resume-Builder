@@ -1,6 +1,7 @@
  .templatemid{
     display: flex;
     height: 100%;
+    padding: none;
 }
 
 *{
@@ -26,6 +27,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    font-size: 13px;
+    /* padding-left: 10px; */
 } 
 
 

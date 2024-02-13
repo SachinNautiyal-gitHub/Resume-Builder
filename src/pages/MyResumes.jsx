@@ -2,23 +2,15 @@ import "./Styles/MyResumes.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Box } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import JsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import Grid from "@mui/material/Grid";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import { connect } from "react-redux";
 import { templates } from "../asset/data/templates";
 import { addAllExperience, addEducation, addPersonalInfo, editSkill, selectResume,selectTemplate,} from "../redux/action/Actions";
 
-// details in the local storage are stored in JSON format (key,value) on this page
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+
 
 const StatetoProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
@@ -76,11 +68,19 @@ const MyResumes = (props) => {
   };
 
   const downloadResume = (id) => {
-    const report = new JsPDF("portrait", "pt", "a4");
-    report.html(document.getElementById(`${id}report`)).then(() => {
-      report.save(`resume.pdf`);
+    const doc = new JsPDF("p", "pt", "a4");
+    const capture = document.getElementById(`${id}ITEM`);
+  
+    html2canvas(capture).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png'); // Correct MIME type
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+  
+      doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+      doc.save(`resume.pdf`);
     });
   };
+  
 
   const setUserData = (resume) => {
 
@@ -123,8 +123,8 @@ const MyResumes = (props) => {
                     margin={2}
                     key={index}
                   >
-                    <Item id={`${index}ITEM`}>
-                      {getTemplate(resume, index)}
+                    <div id={`${index}ITEM`}>
+                    {getTemplate(resume, index)}
                       <div className="use-template-btn-cont">
                         <Button
                           className="use-template-btn"
@@ -155,7 +155,7 @@ const MyResumes = (props) => {
                           Edit Template
                         </Button>
                       </div>
-                    </Item>
+                    </div>
                   </Grid>
                 );
               })

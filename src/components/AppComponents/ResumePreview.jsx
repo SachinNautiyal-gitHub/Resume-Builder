@@ -2,6 +2,7 @@ import "../Styles/ResumePreview.css";
 import React, { useState } from "react";
 import { Button, CircularProgress, Container, TextField, Box, Modal, Typography } from "@mui/material";
 import JsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import uniqid from "uniqid";
 import { connect } from "react-redux";
 import { templates } from "../../asset/data/templates";
@@ -19,7 +20,6 @@ const mapStatetoProps = (state) => ({
 const mapDispatchtoProps = (dispatch) => ({});
 
 const ResumePreview = (props) => {
-
   const [showModal, setShowModal] = useState(false)
   const [loading, setLoading] = useState(false);
   const [resumeName, setResumeName] = useState("");
@@ -40,20 +40,25 @@ const ResumePreview = (props) => {
   };
 
 
+
   const handleSave = () => {
     if (resumeName.length === 0) {
       setError("*Please fill this field");
     } else {
       setError("");
       setLoading(true);
-      const report = new JsPDF("portrait", "pt", "a4");
-      report
-        .html(document.getElementById(`${props.selectedTemplateId-1}report`))
-        .then(() => {
-          report.save(`${resumeName}.pdf`);
-          setLoading(false);
-          //Saving the user data in localstorage
-          let resumes = window.localStorage.getItem("resumes");
+      const doc = new JsPDF("p", "pt", "a4");
+      const capture = document.querySelector('.resume-preview-grid-item');
+
+      html2canvas(capture).then((canvas) => {
+        const imgData = canvas.toDataURL('img/png');
+        const componentWidth = doc.internal.pageSize.getWidth();
+        const componentHeight = doc.internal.pageSize.getHeight();
+        doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+
+        doc.save(`${resumeName}.pdf`);
+
+        let resumes = window.localStorage.getItem("resumes");
           if (resumes) {
             let newResumes = JSON.parse(resumes);
 
@@ -80,7 +85,7 @@ const ResumePreview = (props) => {
                 JSON.stringify(allNewResumes)
               );
 
-              window.location.reload();
+              window.location.href = '/myresume';
 
               return;
             }
@@ -110,106 +115,100 @@ const ResumePreview = (props) => {
               ])
             );
           }
-          //Redirect user to the myResumes page
-          window.location.reload();
-        })
-        .catch((error) => console.log(error.message));
+          window.location.href = '/myresume';
+      }).catch((error) => console.log(error.message));
+      setShowModal(true);
     }
-    setShowModal(true); // Set showPopup state to true after successful download
-  };
+  }
 
   const handleBack = () => {
     props.setTab(props.tab - 1);
   };
 
-
   return (
-    <>
-      <Container
-        sx={{
-          padding: {
-            xs: "40px 20px",
-            md: "60px 80px",
-          },
-        }}
-        className="preview-container">
-        <h2 className="preview-header-title">Resume Preview</h2>
-        <div className="resume-preview-grid-container">
-          <div className="resume-preview-grid-item" id="previewresume">
+    <Container
+      sx={{
+        padding: {
+          xs: "40px 20px",
+          md: "60px 80px",
+        },
+      }}
+      className="preview-container">
+      <h2 className="preview-header-title">Resume Preview</h2>
+      <div className="resume-preview-grid-container">
+        <div className="resume-preview-grid-item" id="previewresume">
           {templates.map((template, index) => {
             return getTemplate(template, index);
           })}
-          </div>
-          <div className="resume-preview-grid-item">
-            <div className="resume-save-container">
-              <h3 className="resume-save-title">Create File Name</h3>
-              <TextField
-                value={resumeName}
-                onChange={(e) => setResumeName(e.target.value)}
-                className="resume-name-field"
-                sx={{ width: "70%" }}
-                id="outlined-basic"
-                variant="outlined"
-                error={error.length > 0 ? true : false}
-                helperText={error}
-              />
-              <div className="resume-back-next-container">
-                <Button
-                  onClick={handleBack}
-                  className="outlined-btn"
-                  sx={{ marginRight: "20px" }}
-                  variant="outlined">
-                  Back
-                </Button>
-                {loading ? (
-                  <CircularProgress size={25} />
-                ) : (
-                  <Box>
-                    <Button
-                      onClick={handleSave}
-                      className="contained-btn"
-                      variant="contained">
-                      Save
-                    </Button>
-                    {showModal && (
-                      <Modal open={showModal}>
-                        <Box sx={{
-                          position: 'absolute',
-                          top: '50%',
-                          left: '50%',
-                          transform: 'translate(-50%, -50%)',
-                          bgcolor: 'background.paper',
-                          boxShadow: 24,
-                          p: 4,
-                          borderRadius: '10px',
-                          maxWidth: '80vw',
-                          maxHeight: '80vh',
-                          overflow: 'auto',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '30%',
-                        }} className={showModal ? 'animate-modal visible' : 'animate-modal'}
-                        >
-                          <CheckCircleIcon color='primary' style={{ fontSize: 80 }} />
+        </div>
+        <div className="resume-preview-grid-item">
+          <div className="resume-save-container">
+            <h3 className="resume-save-title">Create File Name</h3>
+            <TextField
+              value={resumeName}
+              onChange={(e) => setResumeName(e.target.value)}
+              className="resume-name-field"
+              sx={{ width: "70%" }}
+              id="outlined-basic"
+              variant="outlined"
+              error={error.length > 0 ? true : false}
+              helperText={error}
+            />
+            <div className="resume-back-next-container">
+              <Button
+                onClick={handleBack}
+                className="outlined-btn"
+                sx={{ marginRight: "20px" }}
+                variant="outlined">
+                Back
+              </Button>
+              {loading ? (
+                <CircularProgress size={25} />
+              ) : (
+                <Box>
+                  <Button
+                    onClick={handleSave}
+                    className="contained-btn"
+                    variant="contained">
+                    Save
+                  </Button>
+                  {showModal && (
+                    <Modal open={showModal}>
+                      <Box sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 4,
+                        borderRadius: '10px',
+                        maxWidth: '80vw',
+                        maxHeight: '80vh',
+                        overflow: 'auto',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '30%',
+                      }} className={showModal ? 'animate-modal visible' : 'animate-modal'}
+                      >
+                        <CheckCircleIcon color='primary' style={{ fontSize: 80 }} />
 
-                          <Typography variant='h5'>Your Resume has been Successfully Saved</Typography>
-                          <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' height='100%'>
-                          </Box>
+                        <Typography variant='h5'>Your Resume has been Successfully Saved</Typography>
+                        <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' height='100%'>
                         </Box>
-                      </Modal>
-                    )}
-                  </Box>
-                )}
-              </div>
+                      </Box>
+                    </Modal>
+                  )}
+                </Box>
+              )}
             </div>
           </div>
         </div>
-      </Container>
+      </div>
+    </Container>
+  );
+};
 
-    </>
-  )
-}
-
-export default connect(mapStatetoProps, mapDispatchtoProps) (ResumePreview);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ResumePreview);
