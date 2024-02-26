@@ -19,7 +19,7 @@
 .templatemid{
     display: flex;
     margin-top: 30px;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 
@@ -29,10 +29,16 @@
     gap: 40px;
     margin-top:40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 40%;
+}
+
+.rightSection{
+    width: 50%;
 }
 
 .objective{
     margin-bottom: 25px;
+    margin-top: 2rem;
 }
 
 .line{
@@ -44,7 +50,28 @@
  }
 
 
+
+ @media (max-width:1200px){
+     .leftsection{
+        gap: 4px;
+     }
+
+     .templateheader{
+        height: 100px;
+        padding-top: 20px;
+     }
+
+     .profileImg{
+        scale: 0.8;
+     }
+ }
+
  @media (max-width:600px){
+    
+    .templateheader{
+        height: 120px;
+    }
+
     .profileImg{
        scale: 0.8;
     }

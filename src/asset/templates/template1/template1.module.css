@@ -6,7 +6,7 @@
 .templateheader{
     display: flex;
     align-items: center;
-    /* justify-content: space-evenly; */
+    
      
 }
 
@@ -89,8 +89,28 @@
 
 
 @media (max-width:600px){
+
     .profileImg{
-       scale: 0.8;
+        scale: 0.8;
+        margin-left: none;
     }
- 
+   
+   .templateheader{
+     height: 140px;
+     width: 100%;
+     justify-content: center;
+   }
+
+   .skills{
+    margin-top: 2px;
+   }
+
+   .skills ul {
+    margin-bottom: 4px;
+   }
+
+   .education{
+    margin-top: 2px;
+   }
+
   }

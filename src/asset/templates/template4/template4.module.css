@@ -1,5 +1,5 @@
 .top{
-    padding-top: 60px;
+    padding-top: 40px;
     background-color: #efcfc2;
     margin-bottom: 20px;
 }
@@ -9,11 +9,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px;
+    height: 120px;
 }
 
 .profileImg{
-    scale: 1.2;
+    scale: 0.8;
     margin: auto;
 }
 
@@ -21,13 +21,17 @@
 
 .templatemid{
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 40px;
+    justify-content: space-between;
+    width: 100%;
    
 }
 
 .leftsection{
-    width: 30%;
+    width: 220px;
+}
+
+.rightSection{
+    width: 250px;
 }
 
 .contact{
@@ -60,10 +64,22 @@
 }
 
 
-@media (max-width:600px){
-    .profileImg{
-       scale: 0.8;
+@media(max-width:900px){
+    .line{
+        width: 250px;
     }
+
+    .skills{
+        margin-top: 2px;
+    }
+
+    .education{
+        margin-top: 4px;
+    }
+}
+
+
+@media (max-width:600px){
 
 
     .line{
