@@ -7,6 +7,7 @@ import uniqid from "uniqid";
 import { connect } from "react-redux";
 import { templates } from "../../asset/data/templates";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useNavigate } from "react-router-dom";
 
 const mapStatetoProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
@@ -24,6 +25,8 @@ const ResumePreview = (props) => {
   const [loading, setLoading] = useState(false);
   const [resumeName, setResumeName] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const getTemplate = (template, index) => {
     // creating a new React element using another element as a starting point.
@@ -85,7 +88,7 @@ const ResumePreview = (props) => {
                 JSON.stringify(allNewResumes)
               );
 
-              window.location.href = '/myresume';
+              navigate('/myresume');
 
               return;
             }
@@ -115,7 +118,7 @@ const ResumePreview = (props) => {
               ])
             );
           }
-          window.location.href = '/myresume';
+          navigate('/myresume');
       }).catch((error) => console.log(error.message));
       setShowModal(true);
     }
