@@ -7,10 +7,10 @@ const TemplateContactINfo = (props) => {
   return (
     <div className='contact-info'>
           <div className="template-header-second" >
-         <p style={{paddingBottom:'10px',display:'flex'}}> <LocationOnIcon sx={{paddingRight:'6px',}}/> {props.personalInfo.address}<br/>{props.personalInfo.city} {props.personalInfo.country} {props.personalInfo.postalCode}</p> 
+         <p style={{paddingBottom:'4px',display:'flex', flexWrap:'wrap',alignSelf:'center'}}> <LocationOnIcon sx={{ display: { xs: 'none', sm: 'block' }}}/> {props.personalInfo.address}<br/>{props.personalInfo.city} {props.personalInfo.country} {props.personalInfo.postalCode}</p> 
          
-          <p style={{ paddingBottom:'10px',display:'flex',}}><LocalPhoneIcon sx={{paddingRight:'6px'}}/>{props.personalInfo.mobile}</p>
-          <p style={{ paddingBottom:'10px',display:'flex',}}><EmailIcon sx={{paddingRight:'6px'}}/>{props.personalInfo.email}</p>
+          <p style={{ paddingBottom:'4px',display:'flex',flexWrap:'wrap', alignSelf:'center'}}><LocalPhoneIcon sx={{ display: { xs: 'none', sm: 'block' }}}/>{props.personalInfo.mobile}</p>
+          <p style={{ paddingBottom:'4px',display:'flex',flexWrap:'wrap',alignSelf:'center'}}><EmailIcon sx={{ display: { xs: 'none', sm: 'block' }}}/>{props.personalInfo.email}</p>
         </div>
     </div>
   )
