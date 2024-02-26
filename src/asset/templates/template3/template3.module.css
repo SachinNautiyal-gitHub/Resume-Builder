@@ -42,3 +42,11 @@
     background-color: #8d4b55;
 
  }
+
+
+ @media (max-width:600px){
+    .profileImg{
+       scale: 0.8;
+    }
+ 
+  }

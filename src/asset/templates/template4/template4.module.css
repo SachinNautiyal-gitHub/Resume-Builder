@@ -58,3 +58,16 @@
     background-color: #443f45;
     width: 300px;
 }
+
+
+@media (max-width:600px){
+    .profileImg{
+       scale: 0.8;
+    }
+
+
+    .line{
+        width: 200px;
+    }
+ 
+  }

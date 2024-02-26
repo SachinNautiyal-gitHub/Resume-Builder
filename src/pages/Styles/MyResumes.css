@@ -56,9 +56,13 @@
     font-weight: 500;
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .my-resumes {
       padding: 0px;
+    }
+
+    .resume{
+      scale: 0.8;
     }
   }
   @media screen and (max-width: 1050px) {

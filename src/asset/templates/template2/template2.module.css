@@ -61,3 +61,12 @@
  .objective{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
+
+
+
+ @media (max-width:600px){
+   .profileImg{
+      scale: 0.8;
+   }
+
+ }
