@@ -25,21 +25,21 @@ const Navbar = () => {
             Resume Builder
           </Typography>
           <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-            <ListItemButton selected={location.pathname === '/' ? true : false}>
               <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+            <ListItemButton selected={location.pathname === '/' ? true : false}>
                 Resume Templates
-              </Link>
             </ListItemButton>
-            <ListItemButton selected={location.pathname === '/myresume' ? true : false}>
+              </Link>
               <Link to="/myresume" style={{ textDecoration: 'none', color: 'black' }}>
+            <ListItemButton selected={location.pathname === '/myresume' ? true : false}>
                 My Resume
-              </Link>
             </ListItemButton>
-            <ListItemButton selected={location.pathname === '/about' ? true : false}>
+              </Link>
               <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>
+            <ListItemButton selected={location.pathname === '/about' ? true : false}>
                 About us
-              </Link>
             </ListItemButton>
+              </Link>
           </Stack>
           <IconButton
             edge="end"

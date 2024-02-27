@@ -1,6 +1,6 @@
 import "./Styles/MyResumes.css";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button, Box } from "@mui/material";
 import JsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -161,9 +161,9 @@ const MyResumes = (props) => {
               })
             ) : (
               <div className="no-resumes-container">
-                <SentimentVeryDissatisfiedIcon fontSize="large" />
+                <SentimentVeryDissatisfiedIcon style={{fontSize:'100px'}}/>
                 <p className="no-resumes-text">
-                  You do not have any Resumes yet. Make One to view it here.
+                  You do not have any Resumes yet !! <Link to={'/'} style={{fontWeight:'bold', marginLeft:'0.5rem',}}> Make One</Link>
                 </p>
               </div>
             )}
