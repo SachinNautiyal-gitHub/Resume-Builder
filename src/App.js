@@ -5,13 +5,13 @@ import Navbar from './components/AppComponents/Navbar';
 import AboutUs from './pages/AboutUs';
 import MyResumes from './pages/MyResumes';
 import DetailsFiling from './pages/DetailsFiling'
+import Footer from './components/AppComponents/Footer';
 
 
 function App() {
   return (
    <>
   
-
    
    <BrowserRouter>
    <Navbar/>
@@ -20,12 +20,13 @@ function App() {
    <Route path='/myresume'  element={<MyResumes/>}/>
    <Route path='/about'  element={<AboutUs/>}/>
    <Route path='/fill-details'  element={<DetailsFiling/>}/>
-
+  
    </Routes>
+   <Footer/>
    </BrowserRouter>
    
    
-  
+
   
    
    </>

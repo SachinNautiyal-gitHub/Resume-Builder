@@ -1,6 +1,7 @@
 .my-resumes {
     width: 100%;
     padding: 50px;
+    min-height: 85vh;
     justify-items: center;
   }
   

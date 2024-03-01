@@ -7,6 +7,7 @@
 
 .home {
     width: 100%;
+    min-height: 85vh;
 }
 
 .home-templates-cont {
