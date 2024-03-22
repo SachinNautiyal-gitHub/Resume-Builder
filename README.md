@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# Almabetter Frontend Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Resume Builder 
+The Resume Builder project is a robust application developed using React, Material UI, and Redux for state management, aimed at simplifying the process of crafting professional resumes. This project offers users a seamless and intuitive interface to create personalized resumes tailored to their unique skills, experiences, and preferences.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Application Folder Structure
+1. [src/asset/Checks] -> Containing InputChecks file, which will check for the if any of input feild is filled or empty.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. [src/asset/data] -> Containing two file data.js , and templates.js, In the data file we have custome fake data for resume template    and in the templates.js file we have array data of templates.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. [src/asset/templates] -> Containing four Resume templates.
 
-### `npm test`
+4. [src/components/AppComponents] -> Containing all the app component which is used in app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. [src/components/TemplateComponents] -> Containing all the resume components which is used in resume templates.
 
-### `npm run build`
+6. [src/components/Styles] -> Containing all the seprate css files of components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. [src/images] -> Containing all the images used in the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+8. [src/pages] -> Containing all the pages file .
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+9. [src/pages/Styles] -> All the seprate css file of pages is inside this folder.
 
-### `npm run eject`
+10. [src/redux] -> Containing two folder action and reducer, for state management of the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+11. [src/store.js] - creating a react store inside this file.
+   
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+├── public
+├── src/
+│   ├── asset
+│   │       ├── Checks 
+│   │       │      ├── InputChecks.js
+│   │       ├── data
+│   │       │      ├── data.js
+│   │       │      ├── templates.js
+│   │       ├── templates
+│   │              ├── template1
+│   │                        ├── Template1.js
+│   │                        ├── template1.module.css
+│   │              ├── template2
+│   │                        ├── Template2.js
+│   │                        ├── template2.module.css
+│   │              ├── template3
+│   │                        ├── Template3.js
+│   │                        ├── template3.module.css
+│   │              ├── template4
+│   │                        ├── Template4.js
+│   │                        ├── template4.module.css
+│   │
+│   ├── components
+│   │       ├──  AppComponents
+│   │                 ├── EducationSection.jsx
+│   │                 ├── Footer.jsx
+│   │                 ├── Input.jsx
+│   │                 ├── KeySkills.jsx
+│   │                 ├── Navbar.jsx
+│   │                 ├── NextBackButton.jsx
+│   │                 ├── PersonalInfo.jsx
+│   │                 ├── ResumePreview.jsx
+│   │                 ├── SelectedComponent.jsx
+│   │                 ├── SidebarDetailFilling.jsx
+│   │                 ├── WorkExperience.jsx 
+│   │ 
+│   │
+│   │        ├── Styles - All the css files for componets files
+│   │ 
+│   │       ├──  TemplateComponents
+│   │                 ├── HeaderSection.jsx
+│   │                 ├── TemplateHeading.jsx
+│   │                 ├── TemplateContact.jsx
+│   │                 ├── TemplateEducation.jsx
+│   │                 ├── TemplateExperience.jsx
+│   │                 ├── TemplateKeySkills.jsx
+│   │                 ├── TemplateObjective.jsx
+│   │                 ├── TemplateProfileImg.jsx
+│   │                 ├── TemplateProfileName.jsx
+│   │
+│   ├── images  - All the images used in this project is inside this folder 
+│   ├── pages
+│   │      ├── Styles - seprate css files for all the pages inside this folder 
+│   │      ├── AboutUs.jsx
+│   │      ├── DetailsFilling.jsx
+│   │      ├── Home.jsx
+│   │      ├── MyResume.jsx
+│   │      ├── Preview.jsx
+│   ├── redux
+│   │      ├── action - Actions.js
+│   │      ├── Reducer 
+│   │            ├── CombileReducer.js
+│   ├──          ├── Reducers.js
+│   ├── App.css 
+│   ├── App.js
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   ├── setupTests.js
+│   ├── Store.js    
+│       
+│ 
+├── README.md  
+├── {} package-lock.json
+└── {}package.json
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You'll need to have **Node.js**  installed on your computer in order to begin working on the project. 
 
-## Learn More
+Once installed, Clone this repository to your **local** machine.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install the required dependencies as mentioned below by using **npm install** command.
+Start the server by using **npm start**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Visit to see the working of Project : https://www.loom.com/share/61c833f61dd9491e9231c5824caa77e9?sid=54db399f-b6f6-4b0b-9570-f216e412fad1
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+See live site :  https://resume-builder-kappa-lovat.vercel.app/
