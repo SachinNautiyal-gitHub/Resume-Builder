@@ -119,6 +119,5 @@ Start the server by using **npm start**.
 
 ## Deployment
 
-Visit to see the working of Project : https://www.loom.com/share/61c833f61dd9491e9231c5824caa77e9?sid=54db399f-b6f6-4b0b-9570-f216e412fad1
 
 See live site :  https://resume-builder-kappa-lovat.vercel.app/
